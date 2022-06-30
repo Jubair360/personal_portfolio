@@ -21,6 +21,7 @@ $('.counter').counterUp({
     var header = document.querySelector("header");
     header.classList.toggle("sticky", window.scrollY > 0);
 })*/
+/*----------------Resume part--------------*/
 $('.education_tab').click(function(event) {
 	$(this).addClass('active');
 	$('.work_tab').removeClass('active');
@@ -33,3 +34,22 @@ $('.work_tab').click(function(event) {
 	$('.work').show();
 	$('.education').hide();
 });
+/*----------------Resume part--------------*/
+/*-----------------Scroll Animation----------------*/
+
+const scrl = $(window).scrollTop();
+$('.animation').text(scrl);
+
+$(window).scroll(function(){
+    const scrl = $(window).scrollTop();
+    if(scrl>700){
+        $('.icons').css({'opacity':'1'})
+    }
+    else{
+        $('.icons').css({'opacity':'0'})
+    }
+});
+$('.icons').on('click', function(){
+    $('html').animate({'scrollTop':'0'}, 1500);
+})
+/*-----------------Scroll Animation----------------*/
